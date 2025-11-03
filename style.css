@@ -1,0 +1,408 @@
+:root {
+--primary-color: #1e40af;
+--secondary-color: #3b82f6;
+--accent-color: #60a5fa;
+--light-color: #f8fafc;
+--dark-color: #1e293b;
+--success-color: #10b981;
+--danger-color: #ef4444;
+--warning-color: #f59e0b;
+}
+
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: #f1f5f9;
+color: var(--dark-color);
+line-height: 1.6;
+}
+
+.navbar {
+background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+font-weight: 700;
+font-size: 1.5rem;
+letter-spacing: 0.5px;
+}
+
+.dashboard-card {
+background: white;
+border-radius: 16px;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+padding: 2rem;
+margin-bottom: 2rem;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.balance-display {
+font-size: 2.5rem;
+font-weight: 700;
+color: var(--primary-color);
+margin: 1rem 0;
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons {
+display: flex;
+justify-content: center;
+gap: 1.5rem;
+margin-top: 2rem;
+}
+
+.action-btn {
+padding: 1rem 2rem;
+border-radius: 12px;
+font-weight: 600;
+font-size: 1.1rem;
+transition: all 0.3s ease;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+.action-btn:hover {
+transform: translateY(-3px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-send {
+background: linear-gradient(135deg, var(--success-color), #34d399);
+color: white;
+}
+
+.btn-receive {
+background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+color: white;
+}
+
+.btn-withdraw {
+background: linear-gradient(135deg, var(--danger-color), #f87171);
+color: white;
+}
+
+.withdrawal-form {
+background: white;
+border-radius: 16px;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+padding: 2rem;
+margin-top: 2rem;
+animation: fadeIn 0.5s ease;
+}
+
+.form-control {
+border-radius: 10px;
+padding: 0.75rem 1rem;
+border: 1px solid #e2e8f0;
+transition: all 0.3s ease;
+}
+
+.form-control:focus {
+border-color: var(--accent-color);
+box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.modal-content {
+border-radius: 16px;
+border: none;
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+overflow: hidden;
+}
+
+.modal-header {
+background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+color: white;
+border-bottom: none;
+padding: 1.5rem;
+}
+
+.modal-body {
+padding: 2rem;
+}
+
+.modal-footer {
+border-top: none;
+padding: 1.5rem;
+gap: 1rem;
+}
+
+.btn-confirm {
+background: linear-gradient(135deg, var(--success-color), #34d399);
+color: white;
+border: none;
+padding: 0.75rem 1.5rem;
+border-radius: 10px;
+font-weight: 600;
+}
+
+.btn-cancel {
+background: #f1f5f9;
+color: var(--dark-color);
+border: none;
+padding: 0.75rem 1.5rem;
+border-radius: 10px;
+font-weight: 600;
+}
+
+.fee-amount {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--danger-color);
+margin: 1rem 0;
+}
+
+.stats-container {
+display: flex;
+justify-content: space-around;
+margin-top: 2rem;
+flex-wrap: wrap;
+gap: 1rem;
+}
+
+.stat-item {
+text-align: center;
+padding: 1rem;
+border-radius: 12px;
+background: white;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+flex: 1;
+min-width: 150px;
+transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+transform: translateY(-5px);
+}
+
+.stat-value {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--primary-color);
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: #64748b;
+margin-top: 0.5rem;
+}
+
+.user-welcome {
+background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+border-radius: 12px;
+padding: 1.5rem;
+margin-bottom: 1.5rem;
+display: flex;
+align-items: center;
+gap: 1rem;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.user-avatar {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 1.5rem;
+font-weight: 600;
+}
+
+.user-info h3 {
+margin: 0;
+color: var(--dark-color);
+}
+
+.user-info p {
+margin: 0.25rem 0 0;
+color: #64748b;
+}
+
+.toggle-container {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+margin-bottom: 1.5rem;
+}
+
+.toggle-label {
+font-weight: 600;
+color: var(--dark-color);
+}
+
+.toggle-switch {
+position: relative;
+display: inline-block;
+width: 60px;
+height: 30px;
+}
+
+.toggle-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.toggle-slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #cbd5e1;
+transition: .4s;
+border-radius: 34px;
+}
+
+.toggle-slider:before {
+position: absolute;
+content: "";
+height: 22px;
+width: 22px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+background-color: var(--success-color);
+}
+
+input:checked + .toggle-slider:before {
+transform: translateX(30px);
+}
+
+.investment-chart {
+height: 200px;
+background: linear-gradient(135deg, #f0f9ff, #e0f7fa);
+border-radius: 12px;
+margin: 1.5rem 0;
+position: relative;
+overflow: hidden;
+}
+
+.chart-line {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 80%;
+background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" preserveAspectRatio="none"><path d="M0,150 C100,100 200,180 300,120 C400,60 500,140 500,140 L500,200 L0,200 Z" fill="%233b82f6" opacity="0.3"/><path d="M0,150 C100,100 200,180 300,120 C400,60 500,140 500,140" stroke="%231e40af" stroke-width="3" fill="none"/></svg>');
+background-size: cover;
+}
+
+.recent-transactions {
+margin-top: 2rem;
+}
+
+.transaction-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem;
+border-bottom: 1px solid #e2e8f0;
+}
+
+.transaction-item:last-child {
+border-bottom: none;
+}
+
+.transaction-icon {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+}
+
+.transaction-details {
+flex: 1;
+margin-left: 1rem;
+}
+
+.transaction-name {
+font-weight: 600;
+margin: 0;
+}
+
+.transaction-date {
+color: #64748b;
+font-size: 0.85rem;
+margin: 0;
+}
+
+.transaction-amount {
+font-weight: 600;
+}
+
+.positive {
+color: var(--success-color);
+}
+
+.negative {
+color: var(--danger-color);
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.05); }
+100% { transform: scale(1); }
+}
+
+.pulse {
+animation: pulse 2s infinite;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+.balance-display {
+font-size: 2rem;
+}
+
+.action-buttons {
+flex-direction: column;
+align-items: center;
+}
+
+.action-btn {
+width: 100%;
+justify-content: center;
+}
+
+.stats-container {
+flex-direction: column;
+}
+}
+
+@media (max-width: 576px) {
+.dashboard-card, .withdrawal-form {
+padding: 1.5rem;
+}
+
+.balance-display {
+font-size: 1.75rem;
+}
+
+.user-welcome {
+flex-direction: column;
+text-align: center;
+}
+}
